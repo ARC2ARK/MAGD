@@ -1,0 +1,137 @@
+function setup() {
+  function draw() {
+  background(200);
+
+    
+    colorMode(RGB, 255);
+let myColor = color(180, 175, 230);
+background(myColor);
+colorMode(RGB, 1);
+let redValue = red(myColor);
+let greenValue = green(myColor);
+let blueValue = blue(myColor);
+text(`Red: ${redValue}`, 10, 10, 80, 80);
+text(`Green: ${greenValue}`, 10, 40, 80, 80);
+text(`Blue: ${blueValue}`, 10, 70, 80, 80);
+describe('A purple canvas with the red, green, and blue decimal values of the color written on it.');
+    
+    
+  // Set the x variable based
+  // on the current frameCount.
+  let x = frameCount % 100;
+
+  // If the mouse is pressed,
+  // decrease the frame rate.
+  if (mouseIsPressed === true) {
+    frameRate(60);
+  } else {
+    frameRate(60);
+  }
+
+  // Use x to set the circle's
+  // position.
+  circle(x, 50, 20);
+
+  describe('A white circle on a gray background. The circle moves from left to right in a loop. It slows down when the mouse is pressed.');
+}
+  
+  createCanvas(400, 400);
+}
+
+function draw() {
+  function setup() {
+  createCanvas(400, 400);
+  background(GRAY);
+  line(0, 0, width, height);
+}
+
+
+ 
+  createCanvas(720, 400);
+  background(0);
+  stroke(153);
+  strokeWeight(4);
+  strokeCap(SQUARE);
+
+  let a = 50;
+  let b = 120;
+  let c = 180;
+
+  line(a, b, a + c, b);
+  line(a, b + 10, a + c, b + 10);
+  line(a, b + 20, a + c, b + 20);
+  line(a, b + 30, a + c, b + 30);
+
+  a = a + c;
+  b = height - b;
+
+  line(a, b, a + c, b);
+  line(a, b + 10, a + c, b + 10);
+  line(a, b + 20, a + c, b + 20);
+  line(a, b + 30, a + c, b + 30);
+
+  a = a + c;
+  b = height - b;
+
+  line(a, b, a + c, b);
+  line(a, b + 10, a + c, b + 10);
+  line(a, b + 20, a + c, b + 20);
+  line(a, b + 30, a + c, b + 30);
+  
+  
+  // Move the mouse across the canvas
+
+  background(244, 248, 252);
+  line(mouseX, 0, mouseX, 100);
+  describe('horizontal black line moves left and right with mouse x-position');
+
+  
+  // Move the mouse across the canvas
+
+  background(244, 248, 252);
+  line(0, mouseY, 100, mouseY);
+  describe('vertical black line moves up and down with mouse y-position');
+
+ // Move the mouse across the canvas to leave a trail
+
+  //slow down the frameRate to make it more visible
+  frameRate(60);
+}
+
+function draw() {
+  background(244, 248, 252);
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  print(pmouseX + ' -> ' + mouseX);
+  describe(`line trail is created from cursor movements.
+    faster movement make longer line.`);
+  
+let x1 = 10;
+let y1 = 50;
+let x2 = 90;
+let y2 = 50;
+
+line(x1, y1, x2, y2);
+strokeWeight(5);
+point(x1, y1);
+point(x2, y2);
+
+let d = dist(x1, y1, x2, y2);
+text(d, 43, 40);
+
+describe('Two dots connected by a horizontal line. The number 80 is written above the center of the line.');
+
+  
+  function draw() {
+  // Invert the y-axis.
+  scale(1, -1);
+  translate(0, -height);
+
+  let x = frameCount;
+  let y = 5 * sqrt(x);
+  point(x, y);
+
+  describe('A series of black dots that get higher slowly from left to right.');
+}
+  
+  
+}

@@ -1,0 +1,60 @@
+function setup() {
+ 
+  createCanvas(400, 400);
+  background(200);
+ 
+  
+    ellipseMode(RADIUS);
+fill(255);
+ellipse(350, 350, 30, 30);
+ellipseMode(CENTER);
+fill(100);
+ellipse(350, 350, 30, 30);
+describe('A white circle with a gray circle at its center. Both circles have black outlines.');
+
+}
+// Click anywhere in the webpage to change
+// the color value of the rectangle
+
+let colorValue = 0;
+function draw() {
+  fill(colorValue);
+  rect(50, 50, 300, 250);
+  describe('black 50-by-50 rect turns white with mouse click/press.');
+}
+function mousePressed() {
+  if (colorValue === 0) {
+    colorValue = 255;
+  } else {
+    colorValue = 0;
+  }
+ 
+
+
+
+  // Move the mouse across the canvas
+function draw() {
+  background (153);
+  line(mouseX, 0, mouseX, 400);
+  describe('horizontal black line moves left and right with mouse x-position');
+  
+  // Move the mouse across the canvas
+function draw() {
+  background (153);
+  line(0, mouseY, 400, mouseY);
+  describe('vertical black line moves up and down with mouse y-position');
+}
+}
+
+background (200);
+ 
+  
+  ellipseMode(RADIUS);
+fill(255);
+ellipse(350, 350, 30, 30);
+ellipseMode(CENTER);
+fill(100);
+ellipse (350, 350, 30, 30);
+describe('A white circle with a gray circle at its center. Both circles have black outlines.');
+}
+
