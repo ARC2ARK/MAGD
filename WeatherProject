@@ -1,0 +1,99 @@
+using System;
+using System.Data;
+using System.IO;
+
+class WeatherApp
+{
+    //Sample weather data for 7 days
+    static string[] daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+    static string[] weatherConditions = { "Sunny", "Rainy", "Cloudy", "Stormy", "Foggy", "Snowy" };
+    static int[] minTemperatures = { 10, 12, 8, 15, 14, 9, 5 };
+    static int[] maxTemperatures = { 20, 18, 16, 22, 21, 17, 12 };
+    static string location = "Default City";
+
+    static void Main()
+    {
+        LoadWeatherData();
+
+        Console.WriteLine("Welcome to the Weather App!");
+        SelectLocation();
+        DisplayWeatherForWeek();
+        DisplayAverageTemperature();
+        SimulateCropGrowth();
+        SaveWeatherData();
+
+        Console.WriteLine("Thank you for using the Weather App!");
+
+
+
+    }
+    // User selects a predefined location
+    static void SelectLocation()
+    {
+
+        Console.WriteLine("\nEnter your location or press enter to use the default");
+        string userInput = Console.ReadLine();
+        if (!string.IsNullOrEmpty(userInput))
+        {
+            location = userInput;
+        }
+        Console.WriteLine($"Weather Forecast for {location}");
+    }
+
+    static void DisplayWeatherForWeek()
+    {
+        Console.WriteLine("\nWeather Forecast for the Week:");
+        for (int i = 0; i < 7; i++)
+        {
+            Console.WriteLine($"{daysOfWeek[i]}: {weatherConditions[i]} ({minTemperatures[i]} degrees C - {maxTemperatures[i]} degrees C)");
+        }
+    }
+    // Display the weather for the next 7 days
+    static void DisplayAverageTemperature()
+    {
+        double totalMin = 0, totalMax = 0;
+        for(int i = 0; i < 7; i++)
+        {
+            totalMin += minTemperatures[i];
+            totalMax += maxTemperatures[i];
+        }
+
+        double avgMin = totalMin / 7;
+        double avgMax = totalMax / 7;
+
+        Console.WriteLine($"\nAverage Temperatures: {avgMin:F1} degrees C - {avgMax:F1} degrees C");
+
+    }
+    // Simulate basic crop growth based on weather
+    static void SimulateCropGrowth()
+    {
+        Console.WriteLine("\nCrop Growth Simulator:");
+        for (int i = 0; i < 7; i++)
+        {
+            string stage;
+            switch (weatherConditions[i])
+            {
+                case "Sunny":
+                    stage = "Growing fast";
+                    break;
+                case "Rainy":
+                    stage = "Watered well";
+                    break;
+                case "Cloudy":
+                    stage = "Slow growth";
+                    break;
+                case "Stormy":
+                    stage = "Damaged";
+                    break;
+                default:
+                    stage = "Normal growth";
+                    break;
+            }
+            Console.WriteLine($"{daysOfWeek[i]}: {weatherConditions[i]} - Crop Status: {stage}");
+        }
+    }
+
+   
+    
+    
+}
